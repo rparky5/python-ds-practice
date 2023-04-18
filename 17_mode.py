@@ -11,3 +11,14 @@ def mode(nums):
         >>> mode([2, 2, 3, 3, 2])
         2
     """
+    greatest_freq = 0
+    greatest_num = 0
+    freq = {}
+
+    for num in nums:
+        freq[num] = freq.get(num, 0) + 1
+        if freq[num] > greatest_freq:
+            greatest_freq = freq[num]
+            greatest_num = num
+
+    return greatest_num 
